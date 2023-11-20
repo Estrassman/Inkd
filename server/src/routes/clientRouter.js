@@ -10,7 +10,7 @@ router.get(authedClientRoutes, (req, res) => {
   if (req.user) {
     res.sendFile(getClientIndexPath());
   } else {
-    res.redirect("/user-sessions/new")
+    res.redirect("/user-sessions/new");
   }
 });
 
