@@ -11,7 +11,7 @@ const UserTile = (props) => {
       <p className="tile-bio">Style: {style}</p>
       <p className="tile-list location">Location: {location}</p>
       <p className="tile-list location">Website: {website}</p>
-      <Link to={`/users/${id}`}>Learn more </Link>
+      //<Link to={`/users/${id}`}>Learn more </Link>
     </div>
   );
 };
