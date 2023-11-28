@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 const UserShow = (props) => {
   const [user, setUser] = useState({});
 
-  const { id, name, style, location, bio, website } = user;
+  const { id, name, style, location, bio, website, image } = user;
   const { id: userId } = useParams();
 
   const getUser = async () => {
@@ -26,6 +26,21 @@ const UserShow = (props) => {
   useEffect(() => {
     getUser();
   }, []);
+
+  return (
+    <div className="user">
+      <h1 className="page-header cell small-9">{name}</h1>
+      <ul>
+        <img width="100px" src={image} />
+        <li>style: {style}</li>
+        <li>bio: {bio}</li>
+        <li>{location}</li>
+        <li>
+          <a href={`${website}`}> go to {name}'s website </a>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 export default UserShow;

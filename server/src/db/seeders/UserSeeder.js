@@ -12,8 +12,8 @@ class UserSeeder {
       {
         email: "testing@test.com",
         password: "test",
-        name: "haha",
-        location: "haha",
+        name: "test",
+        location: "test",
       },
     ];
 

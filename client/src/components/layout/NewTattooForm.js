@@ -2,34 +2,35 @@ import React, { useState, useEffect } from "react";
 import _ from "lodash";
 import Dropzone from "react-dropzone";
 
-const NewImageForm = ({ user, setCurrentUser }) => {
+const NewTattooForm = ({ tattoos, setTattoos }) => {
   const [newImage, setNewImage] = useState(null);
+  const [newTattoo, setNewTattoo] = useState({ image: "", userId: "" });
 
-  const addProfilePicture = async (event) => {
+  const addTattoo = async (event) => {
     event.preventDefault();
-    const newProfilePictureBody = new FormData();
-    newProfilePictureBody.append("image", newImage);
+    const newTattooBody = new FormData();
+    newTattooBody.append("image", newImage);
     try {
-      const response = await fetch(`/api/v1/users/${user.id}/image`, {
-        method: "PATCH",
+      const response = await fetch("/api/v1/tattoos", {
+        method: "POST",
         headers: {
           Accept: "image/jpeg",
         },
-        body: newProfilePictureBody,
+        body: newTattooBody,
       });
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`);
       }
       const body = await response.json();
-      setCurrentUser({ ...user, image: body.user.image });
+      setNewTattoo({ ...newTattoo, image: body.tattoo.image });
     } catch (error) {
-      console.error(`Error in addProfilePicture Fetch: ${error.message}`);
+      console.error(`Error in addTattoo Fetch: ${error.message}`);
     }
   };
 
-  let uploadImagePromptText = "Click Or Drag Here To Edit Profile Image";
+  let uploadImagePromptText = "Click Or Drag Here To Edit Tattoo Image";
 
-  if (!_.isEmpty(user.image)) {
+  if (!_.isEmpty(newTattoo.image)) {
     uploadImagePromptText = "Click here to upload image, then click the button below to save!";
   }
 
@@ -38,7 +39,7 @@ const NewImageForm = ({ user, setCurrentUser }) => {
   };
 
   return (
-    <form className="dropzone" onSubmit={addProfilePicture}>
+    <form className="dropzone" onSubmit={addTattoo}>
       <Dropzone onDrop={handleImageUpload}>
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
@@ -47,9 +48,9 @@ const NewImageForm = ({ user, setCurrentUser }) => {
           </div>
         )}
       </Dropzone>
-      <input type="submit" value="Save Selected Profile Image" />
+      <input type="submit" value="Save Selected Tattoo Image" />
     </form>
   );
 };
 
-export default NewImageForm;
+export default NewTattooForm;
