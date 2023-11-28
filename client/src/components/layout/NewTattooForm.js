@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import _ from "lodash";
 import Dropzone from "react-dropzone";
 
-const NewTattooForm = ({ tattoos, setTattoos }) => {
+const NewTattooForm = () => {
   const [newImage, setNewImage] = useState(null);
   const [newTattoo, setNewTattoo] = useState({ image: "", userId: "" });
 

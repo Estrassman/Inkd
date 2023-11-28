@@ -4,16 +4,18 @@ class UserSeeder {
   static async seed() {
     const usersData = [
       {
-        email: "haha@haha.com",
-        password: "haha",
-        name: "haha",
-        location: "haha",
+        email: "poison@poison.com",
+        password: "poison",
+        name: "poison",
+        location: "Lynn, MA",
+        image: "https://inkd-development.s3.amazonaws.com/1701188268492",
       },
       {
-        email: "testing@test.com",
-        password: "test",
-        name: "test",
-        location: "test",
+        email: "chris@chris.com",
+        password: "chris",
+        name: "chris",
+        location: "Lynn, MA",
+        image: "https://inkd-development.s3.amazonaws.com/1701193616950",
       },
     ];
 

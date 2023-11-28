@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import TattooShow from "./TattooShow";
 
 const UserShow = (props) => {
   const [user, setUser] = useState({});
@@ -39,6 +40,8 @@ const UserShow = (props) => {
           <a href={`${website}`}> go to {name}'s website </a>
         </li>
       </ul>
+      <h2>Tats</h2>
+      <TattooShow user={user} />
     </div>
   );
 };

@@ -28,7 +28,7 @@ class User extends uniqueFunc(Model) {
       type: "object",
       required: ["email", "name", "location"],
       properties: {
-        id: { type: ["integer", "string"] },
+        id: { type: "string" },
         email: { type: "string", pattern: "^\\S+@\\S+\\.\\S+$" },
         name: { type: "string" },
         location: { type: "string" },
