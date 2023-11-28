@@ -10,7 +10,7 @@ class Tattoo extends Model {
       type: "object",
       required: ["image"],
       properties: {
-        userId: { type: ["integer", "string"] },
+        userId: { type: "string" },
         name: { type: "string" },
         user: { type: "string" },
         image: { type: "string" },
