@@ -10,6 +10,8 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import AccountPage from "./layout/AccountPage";
+import Welcome from "./layout/Welcome";
+import AccountTattooPage from "./layout/AccountTattooPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -30,7 +32,8 @@ const App = (props) => {
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path="/" component={UserIndex} />
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/users" component={UserIndex} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/users/:id" component={UserShow} />
@@ -38,6 +41,13 @@ const App = (props) => {
           exact
           path="/profile"
           component={AccountPage}
+          user={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
+        <AuthenticatedRoute
+          exact
+          path="/profile/tattoo"
+          component={AccountTattooPage}
           user={currentUser}
           setCurrentUser={setCurrentUser}
         />

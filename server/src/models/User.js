@@ -28,10 +28,28 @@ class User extends uniqueFunc(Model) {
       type: "object",
       required: ["email", "name", "location"],
       properties: {
+        id: { type: ["integer", "string"] },
         email: { type: "string", pattern: "^\\S+@\\S+\\.\\S+$" },
         name: { type: "string" },
         location: { type: "string" },
+        bio: { type: "string" },
+        style: { type: "string" },
         cryptedPassword: { type: "string" },
+      },
+    };
+  }
+
+  static get relationMappings() {
+    const { Tattoo } = require("./index.js");
+
+    return {
+      tattoo: {
+        relation: Model.HasManyRelation,
+        modelClass: Tattoo,
+        join: {
+          from: "users.id",
+          to: "tattoo.userId",
+        },
       },
     };
   }
