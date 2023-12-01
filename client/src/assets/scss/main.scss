@@ -13,8 +13,8 @@ $link-color: #a8ff06;
   -moz-tab-size: 4;
   tab-size: 4;
 }
+// background-image: url("../images/Octopus-chest.png");
 body {
-  background-image: url("../images/Octopus-chest.png");
   color: #50534d;
 
   font-style: "fantasy";
@@ -34,10 +34,10 @@ body {
 
 .top-bar {
   border: 1px solid #252323;
-  background-image: url("../images/Octopus-chest.png");
   ul {
     background-color: rgba(37, 35, 35, 0);
   }
+  // background-image: url("../images/Octopus-chest.png");
 }
 
 .user {
