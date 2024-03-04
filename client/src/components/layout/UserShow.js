@@ -33,14 +33,11 @@ const UserShow = (props) => {
       <h1 className="page-header cell small-9">{name}</h1>
       <ul>
         <img width="100px" src={image} />
-        <li>style: {style}</li>
-        <li>bio: {bio}</li>
         <li>{location}</li>
         <li>
           <a href={`${website}`}> go to {name}'s website </a>
         </li>
       </ul>
-      <h2>Tats</h2>
       <TattooShow user={user} />
     </div>
   );

@@ -13,9 +13,10 @@ $link-color: #a8ff06;
   -moz-tab-size: 4;
   tab-size: 4;
 }
-// background-image: url("../images/Octopus-chest.png");
+
 body {
-  color: #50534d;
+  background-image: url("https://inkdbucket.s3.amazonaws.com/Octopus-chest.png");
+  color: #21241f;
 
   font-style: "fantasy";
 }
@@ -37,7 +38,7 @@ body {
   ul {
     background-color: rgba(37, 35, 35, 0);
   }
-  // background-image: url("../images/Octopus-chest.png");
+  background-image: url("https://inkdbucket.s3.amazonaws.com/Octopus-chest.png");
 }
 
 .user {
