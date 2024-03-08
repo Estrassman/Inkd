@@ -34,9 +34,6 @@ const UserShow = (props) => {
       <ul>
         <img width="100px" src={image} />
         <li>{location}</li>
-        <li>
-          <a href={`${website}`}> go to {name}'s website </a>
-        </li>
       </ul>
       <TattooShow user={user} />
     </div>
